@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Django Template Practice-1</h1>
+
+    <h2>add filter:</h2>
+    {{ val | add:"2" }}
+
+    <h2>addslashes filter:</h2>
+    {{ str_val | addslashes }}
+
+    <h2>capfirst filter:</h2>
+    {{ str_val | capfirst }}
+
+    <h2>center filter:</h2>
+    "{{ val | center:"21" }}"
+
+    <h2>cut filter:</h2>
+    {{ str_val | cut:" " }}
+
+    <h2>date filter:</h2>
+    {{ date_val | date:"D d M Y" }}
+
+    <h2>default filter:</h2>
+    {{ dflt_val | default:"nothing" }}
+
+    <h2>dictsort filter:</h2>
+    
+    {% comment %} {% for item in sorted_list %}
+        <h2>dictsort filter:</h2>
+        Name: {{ item.name }} - Age: {{ item.age }}<br>
+    {% endfor %} {% endcomment %}
+
+    <ul>
+        {% for item in lst_val|dictsort:"name" %}
+            <li>Name: {{ item.name }} , Age: {{ item.age }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>divisibleby:</h2>
+    {{ val | divisibleby:"2" }}
+
+    <h2>filesizeformat filter:</h2>
+    <h4>Original Value: {{ f_size }}</h4>
+    <h4>Formatted File Size: {{ f_size | filesizeformat }}</h4>
+
+    <h2>first filter:</h2>
+    <h4>Original List: {{ lst_item }}</h4>
+    <h4>First Item: {{ lst_item | first }}</h4>
+
+    <h2>join filter:</h2>
+    <h4>Original List: {{ lst_item }}</h4>
+    <h4>Join list item: {{ lst_item | join:"" }}</h4>
+
+    <h2>last filter:</h2>
+    <h4>Original List: {{ lst_item }}</h4>
+    <h4>Last Item: {{ lst_item | last }}</h4>
+
+    <h2>length filter:</h2>
+    <h4>Original List: {{ lst_item }}</h4>
+    <h4>Length: {{ lst_item | length }}</h4>
+
+    <h2>linenumbers filter:</h2>
+    <h4>Original Text:</h4>
+    <pre>{{ l_number }}</pre>
+
+    <h4>Text with Line Numbers:</h4>
+    <pre>{{ l_number | linenumbers }}</pre>
+
+    <h2>lower filter:</h2>
+    {{ str_val2 | lower }}
+
+    <h2>make_list filter:</h2>
+    {{ str_val2 | make_list }}
+
+
+    <h2>slice filter:</h2>
+    {{ lst_item | random }}
+
+    <h2>random filter:</h2>
+    {{ lst_item | slice:":2" }}
+
+    <h2>slugify filter:</h2>
+    {{ str_val2 | slugify }}
+
+    <h2>time filter:</h2>
+    {{ date_val | time:"H:i" }}
+    
+    <h2>timesince filter:</h2>
+    {{ blog_date | timesince:comment_date }}
+
+    <h2>title filter:</h2>
+    {{ title_val | title }}
+
+    <h2>unordered_list filter:</h2>
+    {{ var | unordered_list }}
+
+    <h2>upper filter:</h2>
+    {{ str_val | upper }}
+
+    <h2>wordcount filter:</h2>
+    {{ str_val | wordcount }}
+
+</body>
+</html>
